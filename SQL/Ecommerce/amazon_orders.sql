@@ -25,11 +25,33 @@ Author: Cesar Rodriguez
 --------------------------------------------------------------------------------
 */
 
-select
-  order_number as OROMS_order_number
-, ecom_order_number as CA_Order_number
-, alt_order_number_2 as AMZ_Order_number
-, date_ordered
-from analytics.sales_header
-where (alt_order_number_2 is not null) and (alt_order_number_2 !='ginating Store: 90')
-and date(date_ordered) = CURRENT_DATE-1;
+WITH recent_orders AS (
+    SELECT 
+        order_number,
+        ecom_order_number,
+        alt_order_number_2,
+        date_ordered,
+        ROW_NUMBER() OVER (PARTITION BY alt_order_number_2 ORDER BY date_ordered DESC) AS rn
+    FROM analytics.sales_header
+    WHERE 
+        alt_order_number_2 IS NOT NULL
+        AND alt_order_number_2 NOT LIKE '%ginating Store: 90%'
+        AND DATE(date_ordered) = CURRENT_DATE - INTERVAL '1' DAY
+),
+cleaned_orders AS (
+    SELECT
+        order_number AS oroms_order_number,
+        ecom_order_number AS ca_order_number,
+        alt_order_number_2 AS amz_order_number,
+        CAST(date_ordered AS DATE) AS order_date,
+        rn
+    FROM recent_orders
+    WHERE rn = 1  -- latest record per Amazon order reference
+)
+SELECT 
+    oroms_order_number,
+    ca_order_number,
+    amz_order_number,
+    order_date
+FROM cleaned_orders
+ORDER BY order_date DESC, amz_order_number;
