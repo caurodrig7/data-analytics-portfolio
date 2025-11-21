@@ -13,54 +13,15 @@ Analytics leader with 8+ years of experience in retail and e-commerce, specializ
 
 ---
 
-## Featured Projects
+## Featured SQL Projects
 
-### **1. CRM & Customer Analytics**
-End-to-end SQL frameworks for segmentation, retention, lifetime value, and sales concentration analysis.
-- **Skills:** CTEs, window functions, conditional segmentation, cohort logic  
-- **Examples:**  
-  - Customer Segmentation (Culinary vs Non-Culinary)  
-  - Top 5000 High-Value Customers  
-  - OCC Buyers (Proximity, Tenure, Activity Segments)  
-
----
-
-### **2. Cooking School & Class Analytics**
-Comprehensive SQL pipelines analyzing Cooking School demand:
-- Frequency buckets (1–5, 6+)
-- Price-band mix (Full Price vs Sale)
-- First-year cohorts & customer evolution
-- Customer lifetime behavior
-
----
-
-### **3. Pricing & Forecasting (Python)**
-Machine learning models to forecast demand, quantify price elasticity, and simulate pricing scenarios.
-- **Skills:** LightGBM, Pandas, Scikit-learn, LIME, MAPE/R² evaluation, scenario simulation  
-- **Examples:**  
-  - Demand Forecasting Model  
-  - Price Elasticity Modeling  
-  - Promotion/Price Sensitivity Analysis  
-
----
-
-### **4. SQL Data Modeling & ETL**
-Robust data transformation logic powering dashboards and analytics.
-- **Skills:** dbt, Snowflake modeling, Airflow scheduling, QA checks, data governance  
-- **Examples:**  
-  - Star-schema modeling  
-  - Daily automated pipeline for marketing attribution  
-  - Data quality framework embedded in SQL  
-
----
-
-### **5. Marketing & Web Analytics**
-Channel attribution logic, session deduplication, referrer correction, and Heap/GA4 measurement improvements.
-- **Skills:** SQL + GA4, GTM, Heap, UTM standardization, session classification  
-- **Examples:**  
-  - Marketing Attribution Model  
-  - Kiosk Self-Referrer Correction  
-  - Web Analytics Definitions Framework  
+| Area | Description | Code |
+|------|-------------|-------|
+| **Customer Relationship Management** | Complex SQL models for customer segmentation, retention behavior, frequency/spend analysis, multi-year cohorts, and high-value customer identification. Includes advanced use of CTEs, window functions, segmentation rules, and revenue concentration metrics. | `/SQL/Customer Relationship Management/` |
+| **Ecommerce** | End-to-end e-commerce analytics including demand modeling, purchase frequency, pricing signals, transaction enrichment, and customer-level behavior patterns. Supports forecasting, merchandising, and online performance insights. | `/SQL/Ecommerce/` |
+| **Finance** | Financial analytics and KPI modeling using SQL to calculate revenue, margins, returns, adjustments, and fiscal period performance with clean fiscal calendar integration and audit-ready logic. | `/SQL/Finance/` |
+| **Planning** | SQL logic supporting capacity planning, class scheduling, resource allocation, and operational forecasting. Includes aggregation frameworks for evaluating utilization across time, location, or product lines. | `/SQL/Planning/` |
+| **Retail** | Deep retail analytics covering Cooking School performance, class demand, visit frequency buckets, price-mix segmentation (Full Price vs Sale), in-store behavior, and cross-channel insights. Built using multi-layer SQL transformations and window-based KPIs. | `/SQL/Retail/` |
 
 ---
 
